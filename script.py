@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# version 11
+# version 12
 # author: slarti
 
 import dbus, gobject
