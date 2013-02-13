@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# version 12
+# version 13
 # author: slarti
 
 import dbus, gobject
@@ -56,8 +56,7 @@ def update_rule(timestamp,rule_id):
 		stop_h = int(dt_stop.strftime("%H"))
 		stop_min = int(dt_stop.strftime("%M"))
 		weekday = int(str(int(dt_start.strftime("%w"))-1).replace("-1","6"))
-	alarm_rule_id = pm_intf.getRuleIdForName('Alarm rule')
-	rule_struct = split_rule_structure(pm_intf.getRule(alarm_rule_id))	
+	rule_struct = split_rule_structure(pm_intf.getRule(rule_id))	
 	rule_struct[0] = rule_id
 	rule_struct[2] = active
 	rule_struct[4][0] = [start_h,start_min,0,0]
